@@ -1,0 +1,71 @@
+ArduCAM Mini 2 MP-Plus Quick Set-up
+
+##############################
+Author: Allison Plourde
+Contact: allyplourde@gmail.com
+Last Updated: 12-Sep-2019
+##############################
+
+
+Step 1: Set up your Wiring
+--------------------------
+Circuit Diagram: https://www.arducam.com/wp-content/uploads/2017/12/ArduinoConnection-.jpg
+
+
+Step 2: Download the ArduCAM Library
+------------------------------------
+You can download a zipped folder from the following git repository
+https://github.com/ArduCAM/Arduino
+
+Unzip and copy the “ArduCAM” and “UTFT4ArduCAM_SPI” folders to your Arduino/libraries folder.
+
+
+Step 3: Enable Appropriate ArduCAM Hardware
+-------------------------------------------
+Open ‘ArduCAM/memorysaver.h’ and enable the appropriate camera module. 
+For the ArduCAM Mini 2 MP-Plus uncomment the following line:
+#define OV2640_MINI_2MP_PLUS
+
+(don’t forget to add the ‘#’)
+Save you changes.
+
+
+Step 4: Open your sketch
+------------------------
+Open your Arduino IDE and navigate to:
+File | Examples | ArduCAM | mini | ArduCAM_Mini_2MP_Plus_functions
+
+Open the sketch and add the "ArduCAM" and "UTFT4ArduCAM_SPI" libraries
+eg. Sketch | Include Library | ArduCAM
+
+Step 5: Compile and Upload your sketch
+--------------------------------------
+You may see the following warnings; however, they can be ignored for now
+C:\Users\Owner\Documents\Arduino\libraries\ArduCAM\examples\mini\ArduCAM_Mini_2MP_Plus_functions\ArduCAM_Mini_2MP_Plus_functions.ino:26:1: warning: narrowing conversion of '196' from 'int' to 'char' inside { } [-Wnarrowing]
+C:\Users\Owner\Documents\Arduino\libraries\ArduCAM\examples\mini\ArduCAM_Mini_2MP_Plus_functions\ArduCAM_Mini_2MP_Plus_functions.ino:26:1: warning: narrowing conversion of '196' from 'int' to 'char' inside { } [-Wnarrowing]
+C:\Users\Owner\Documents\Arduino\libraries\ArduCAM\examples\mini\ArduCAM_Mini_2MP_Plus_functions\ArduCAM_Mini_2MP_Plus_functions.ino:26:1: warning: narrowing conversion of '248' from 'int' to 'char' inside { } [-Wnarrowing]
+C:\Users\Owner\Documents\Arduino\libraries\ArduCAM\examples\mini\ArduCAM_Mini_2MP_Plus_functions\ArduCAM_Mini_2MP_Plus_functions.ino:26:1: warning: narrowing conversion of '224' from 'int' to 'char' inside { } [-Wnarrowing]
+
+Step 5: Open the Host App
+-------------------------
+In your ArduCAM folder, navigate to
+ArduCAM | examples | host_app | ArduCAM_Host_V2.0_Windows
+
+Open the ArduCAM_Host_V2 application
+
+
+Step 6: Set up Application
+--------------------------
+Ensure the appropriate com port is selected (should be the same port your Arduino IDE is using)
+Hit ‘Open’ then hit ‘Capture’ to capture an image.
+You can save your image by ticking the ‘SaveImage’ box 
+and selecting the path to the folder where you would like the image saved.
+
+
+
+
+###############################################################################################################
+Final Remarks,
+If you find you are getting compilation errors, unplug your Arduino, double check your wiring, and restart your Arduino IDE, then plug your Arduino back in to try again.
+For any issues, feel free to contact myself on slack or by email:
+allyplourde@gmail.com

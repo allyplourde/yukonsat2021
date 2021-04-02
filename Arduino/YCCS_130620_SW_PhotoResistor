@@ -1,0 +1,31 @@
+int photocellPin = 0;
+int photocellReading;
+ 
+void setup(void) {
+  Serial.begin(9600);   
+}
+ 
+void loop(void) {
+  photocellReading = analogRead(photocellPin);  
+ 
+  Serial.print("Analog reading = ");
+  Serial.print(photocellReading);     // raw reading in lux
+ 
+  // qualitative readings
+  if (photocellReading < 0.1) {
+    Serial.println(" - Dark");
+  } else if (photocellReading < 5) {
+    Serial.println(" - Very Low Sunlight");
+  } else if (photocellReading < 25) {
+    Serial.println(" - Low Sunlight");
+  } else if (photocellReading < 500) {
+    Serial.println(" - Moderate Sunlight");
+  } else if (photocellReading < 25000) {
+    Serial.println(" - High Sunlight");
+  } else if (photocellReading < 32000) {
+    Serial.println(" - Very High Sunlight");
+  } else {
+    Serial.println(" - Direct Sunlight");
+  }
+  delay(1000);
+}
